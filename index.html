@@ -14,7 +14,11 @@
     <!-- Vue Div -->
     <div id="app">
        
-
+        <ol>
+            <li v-for="email in emails" :key="email">
+                {{ email }}
+            </li>
+        </ol>
 
 
     </div>
