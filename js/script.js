@@ -3,12 +3,18 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            message: "Drago"
+           email: null
         }
     },
-        stampa: {
-            stampaMsg() {
-                console.log("Funziona ?")
-            }
+        methods: {
+           
         },
+        mounted(){
+            console.log("App montata");
+
+            axios.get(`https://flynn.boolean.careers/exercises/api/random/mail`).then(function (result){
+                this.email = result.data.response;
+            
+        })
+        }
 }).mount(`#app`)
